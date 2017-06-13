@@ -2,7 +2,7 @@
  
 #Loop though all the files in the array.
 foreach ($File in $Files){
-if ($File.Name -like "*-*"){ #the Code files can be identified by the "-" character.
+if ($File.Name  -match '^[0-9]{13}\-'){ #the Code files can be identified by the "-" character.
     $PDF = $File.Name
     $number,$Name = $File.Name.split('-')
     #Write-host "Number:" $number "Name :" $Name
@@ -32,3 +32,5 @@ if ($File.Name -like "*-*"){ #the Code files can be identified by the "-" charac
     
 }
 }
+
+
